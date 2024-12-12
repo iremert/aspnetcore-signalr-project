@@ -1,0 +1,122 @@
+﻿@model List<SignalRWebUI.Areas.Admin.Dtos.BrandDtos.ResultBrandDto>
+@{
+    ViewData["Title"] = "BrandList";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+
+}
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <script type="text/javascript">
+            $(document).ready(() => {
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7031/SignalRHub").build();
+                connection.start().then(() => {
+                    setInterval(() => {
+                        connection.invoke("ListWithSignalR");
+                    }, 2000)
+                }).catch((err) => { console.log(err) });
+
+                connection.on("BrandCount", (value) => {
+                    console.log(value);
+                    let functionn = "ChangeStatusToFalse";
+                    let yazı = "Pasif Yap";
+                    let color = "success";
+                    
+                    let tablehtml = `<table class=table mt-3>
+                    <thead>   
+                    <tr>
+                    <th scope="col" ># </th>
+                    <th scope = "col" >Marka Adı</th>
+                    <th scope = "col" > Marka Resmi </th>
+                    <th scope = "col">Site Url </th>
+                    <th scope = "col" > Durum </th>
+                    <th scope = "col" > Durum Güncelle </th>
+                    <th scope = "col" > Sil </th>
+                    <th scope = "col" > Güncelle </th>
+                    </tr>
+                    </thead>`
+                    $.each(value, (index, item) => {
+                        
+                        if (item.status == true) {
+                            functionn="ChangeStatusToFalse";
+                            yazı = "Pasif Yap";
+                            color = "danger";
+                        } else{
+                            functionn="ChangeStatusToTrue";
+                            yazı="Aktif Yap";
+                            color = "success";
+                        }
+                        tablehtml += `<tr>
+                        <td>${index+1}</td>
+                        <td>${item.brandName}</td>
+                        <td>${item.imageUrl}</td>
+                        <td> ${item.url}</td>
+                        <td> ${item.status}</td>
+                        <td> <a href="/Admin/Brand/${functionn}/${item.brandId}" class="btn btn-${color}">${yazı}</a></td>
+                        <td> <a href="/Admin/Brand/DeleteBrand/${item.brandId}" class="btn btn-outline-danger"> Sil </a></td>
+                        <td><a href="/Admin/Brand/UpdateBrand/${item.brandId}" class="btn btn-outline-success" > Güncelle </a></td >
+                        </tr>`
+                    });
+                    tablehtml += `</tbody></table>`;
+                    $("#brandlist").html(tablehtml);
+                });
+            });
+        </script>
+        <h4 class="page-title">Marka İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Marka Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Marka ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz !
+                        </div>
+                        @* <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Marka Adı</th>
+                                    <th scope="col">Marka Resmi</th>
+                                    <th scope="col">Site Url</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.BrandId</td>
+                                        <td>@item.BrandName</td>
+                                        <td>@item.ImageUrl</td>
+                                        <td>@item.Url</td>
+                                        <td>@item.Status</td>
+                                        <td><a href="/Admin/Brand/DeleteBrand/@item.BrandId" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Admin/Brand/UpdateBrand/@item.BrandId" class="btn btn-outline-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table> *@
+                        <div id="brandlist"></div>
+                        <a href="/Admin/Brand/CreateBrand/" class="btn btn-outline-primary">Yeni Marka Girişi</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

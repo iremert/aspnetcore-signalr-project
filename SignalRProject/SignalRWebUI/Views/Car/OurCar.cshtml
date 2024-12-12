@@ -1,0 +1,74 @@
+﻿@model List<ResultCarDto>
+@{
+    ViewData["Title"] = "OurAutomobile";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@await Component.InvokeAsync("_UserLayoutHomeTop")
+<section id="featured-cars" class="featured-cars">
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Arabalar</h2>
+        </div><!--/.section-header-->
+        <div class="featured-cars-content">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-featured-cars">
+                            <div class="featured-img-box">
+                                <div class="featured-cars-img">
+                                    <img src="@item.ImageUrl" alt="cars">
+                                </div>
+                                <div class="featured-model-info" style="height:80px;">
+                                    <p>
+                                        <b>Model:</b> @item.BrandName @item.ModelDate
+                                        <span class="featured-mi-span"> @item.EnginType</span>
+                                        <span class="featured-hp-span"> @item.MotorPower HP</span>
+                                        @item.Gearbox
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="featured-cars-txt" style="height:110px;">
+                                <h2><a href="#">@item.BrandName-@item.Model  </a></h2>
+                                <h3><b>@item.Price ₺    </b></h3>
+
+                                <p>
+                                    <small>@item.Bargain</small>
+                                    @(item.Documents.Length > 59 ? item.Documents.Substring(0, item.Documents.Substring(0, 60).LastIndexOf(" ")) + "..." : item.Documents)
+                                    @(item.Insurance.Length > 59 ? item.Insurance.Substring(0, item.Insurance.Substring(0, 60).LastIndexOf(" ")) + "..." : item.Insurance)
+                                </p>
+
+                            </div>
+                            <div style="margin-left:150px;margin-top:5px;border-radius:13px;background-color:darkred;width:110px;height:40px;display:flex;align-items:center;justify-content:center;">
+                                <a href="#" onclick="showcarid(@item.CarID)"><i style="color:lightblue;font-size:15px;" class="fa fa-shopping-cart">  Sepete Ekle</i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function showcarid(value) {
+            var id = value;
+            $.ajax({
+                type: "Post",
+                data: { CarId: id },
+                url:"/Car/AddBasket/"+id,
+                contentType: 'json',
+                success: function () {
+                    // alert('Tıkladığınız Ürün Id Değeri:' + id);
+                    swal("Seçilen Ürün Id:" + id, "Seçtiğiniz Ürün Sepete Eklendi!", "success");
+                }
+            });
+        }
+    </script>
+    <!--/.container-->
+
+</section><!--/.featured-cars-->

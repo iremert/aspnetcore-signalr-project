@@ -1,0 +1,47 @@
+﻿@model List<ResultCarDto>
+<!--featured-cars start -->
+<section id="featured-cars" class="featured-cars">
+    <div class="container">
+        <div class="section-header">
+            <p>Öne Çıkan Arabalarımızı İnceleyin</p>
+            <h2>Öne Çıkan Arabalar</h2>
+        </div><!--/.section-header-->
+        <div class="featured-cars-content">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-featured-cars">
+                            <div class="featured-img-box">
+                                <div class="featured-cars-img">
+                                    <img src="@item.ImageUrl" alt="cars">
+                                </div>
+                                <div class="featured-model-info">
+                                    <p>
+                                        <b>Model:</b> @item.BrandName @item.ModelDate
+                                        <span class="featured-mi-span"> @item.EnginType</span>
+                                        <span class="featured-hp-span"> @item.MotorPower HP</span>
+                                        @item.Gearbox
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="featured-cars-txt">
+                                <h2><a href="#">@item.BrandName-@item.Model</a></h2>
+                                <h3><b>@item.Price ₺</b></h3>
+                                <p>
+                                    <small>@item.Bargain</small>
+                                    @item.Documents
+                                    @item.Insurance
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div><!--/.container-->
+
+</section>
+
+<!--/.featured-cars-->
+<!--featured-cars end -->

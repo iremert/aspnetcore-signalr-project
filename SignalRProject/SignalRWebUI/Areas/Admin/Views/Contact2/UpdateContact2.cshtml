@@ -1,0 +1,53 @@
+﻿@model UpdateContact2Dto
+@{
+    ViewData["Title"] = "UpdateContact2";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">İletişim Sol Kısım İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni İletişim Sol Kısım Güncelleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <input  type="hidden" asp-for="Contact2ID"/> 
+                            <div class="form-group">
+                                <label for="Adres">Adres Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Address" id="Adres">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="Phone">Telefon Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Phone" id="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Mail Giriniz</label>
+                                <input type="email" class="form-control" asp-for="Email" id="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Map">Harita Giriniz</label>
+                                <textarea rows="3" type="text" class="form-control" asp-for="Map" id="Map"></textarea>
+                            </div>
+
+
+
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Yeni İletişim Sol Kısım Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

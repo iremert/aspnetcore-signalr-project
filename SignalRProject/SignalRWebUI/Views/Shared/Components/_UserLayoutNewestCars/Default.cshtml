@@ -1,0 +1,56 @@
+﻿@model List<ResultCarDto>
+
+<!--new-cars start -->
+<section id="new-cars" class="new-cars">
+    <div class="container">
+        <div class="section-header">
+            <p>En Yeni Arabalarımızı İnceleyin</p>
+            <h2>En Yeni Arabalar</h2>
+        </div><!--/.section-header-->
+        <div class="new-cars-content">
+            <div class="owl-carousel owl-theme" id="new-cars-carousel">
+                @foreach (var item in Model)
+                {
+                    <div class="new-cars-item">
+
+                        <div class="single-new-cars-item">
+
+                            <div class="row">
+
+                                <div class="col-md-7 col-sm-12">
+                                    <div class="new-cars-img">
+                                        <img src="@item.ImageUrl" style="height:250px;width:620px;" alt="img" />
+                                    </div><!--/.new-cars-img-->
+                                </div>
+                                <div class="col-md-5 col-sm-12">
+                                    <div class="new-cars-txt">
+                                        <h2><a href="#">@item.BrandName <span>& @item.Model</span></a></h2>
+                                        <p>
+                                            @(item.Description.Length > 279 ? item.Description.Substring(0, item.Description.Substring(0, 280).LastIndexOf(" ")) + "..." : item.Description)
+                                        </p>
+                                        <p class="new-cars-para2">
+                                            Araç Ekipmanları:
+                                            <small>@item.VehicleEquipment</small>
+                                        </p>
+                                        <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+                                            Detayları Gör
+                                        </button>
+                                    </div><!--/.new-cars-txt-->
+                                </div><!--/.col-->
+
+                            </div><!--/.row-->
+
+                        </div>
+
+                        <!--/.single-new-cars-item-->
+
+                    </div>
+                }
+                <!--/.new-cars-item-->
+
+            </div><!--/#new-cars-carousel-->
+        </div><!--/.new-cars-content-->
+    </div><!--/.container-->
+
+</section><!--/.new-cars-->
+<!--new-cars end -->

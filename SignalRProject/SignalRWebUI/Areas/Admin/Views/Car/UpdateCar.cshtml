@@ -1,0 +1,124 @@
+﻿@model UpdateCarDto
+@{
+    ViewData["Title"] = "UpdateCar";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Araba İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Araba Güncelleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <input asp-for="CarID" type="hidden"/>
+                            <div class="form-group">
+                                <label for="marka">Araba Markasını Giriniz</label>
+                                @Html.DropDownListFor(x => x.BrandId, (List<SelectListItem>)ViewBag.markalar, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Araba Modelini Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Model" id="model">
+                            </div>
+                            <div class="form-group">
+                                <label for="model_yılı">Araba Model Yılını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="ModelDate" id="model_yılı">
+                            </div>
+                            <div class="form-group">
+                                <label for="kilometre">Araba Kilometre Durumunu Giriniz</label>
+                                <input type="text" class="form-control" asp-for="MileageStatus" id="kilometre">
+                            </div>
+                            <div class="form-group">
+                                <label for="motortipi">Araba Motor Tipini Giriniz</label>
+                                <input type="text" class="form-control" asp-for="EnginType" id="motortipi">
+                            </div>
+                            <div class="form-group">
+                                <label for="motorgücü">Araba Motor Gücünü Giriniz</label>
+                                <input type="text" class="form-control" asp-for="MotorPower" id="motorgücü">
+                            </div>
+                            <div class="form-group">
+                                <label for="şanzıman">Araba Şanzıman Türünü Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Gearbox" id="şanzıman">
+                            </div>
+                            <div class="form-group">
+                                <label for="renk">Araba Rengini Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Color" id="renk">
+                            </div>
+                            <div class="form-group">
+                                <label for="hasardurumu">Araba Hasar Durumunu Giriniz</label>
+                                <input type="text" class="form-control" asp-for="DamageStatus" id="hasardurumu">
+                            </div>
+                            <div class="form-group">
+                                <label for="bakımgeçmişi">Araba Bakım Geçmişi Giriniz</label>
+                                <input type="text" class="form-control" asp-for="MaintenanceHistory" id="bakımgeçmişi">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastikdurumu">Araba Lastik Durumunu Giriniz</label>
+                                <input type="text" class="form-control" asp-for="TireCondition" id="lastikdurumu">
+                            </div>
+                            <div class="form-group">
+                                <label for="donanım">Araba Araç Donanımını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="VehicleEquipment" id="donanım">
+                            </div>
+                            <div class="form-group">
+                                <label for="araçiçidurumu">Araba Araç İçi Durumu Giriniz</label>
+                                <input type="text" class="form-control" asp-for="InVehicleStatus" id="araçiçidurumu">
+                            </div>
+                            <div class="form-group">
+                                <label for="belge">Araba Belgelerini Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Documents" id="belge">
+                            </div>
+                            <div class="form-group">
+                                <label for="sigorta">Araba Sigortasını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Insurance" id="sigorta">
+                            </div>
+                            <div class="form-group">
+                                <label for="fiyat">Araba Fiyatını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Price" id="fiyat">
+                            </div>
+                            <div class="form-group">
+                                <label for="pazarlık">Araba Pazarlık Durumunu Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Bargain" id="pazarlık">
+                            </div>
+                            <br />
+                            <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                            <br />
+                            <div class="form-group">
+                                <label for="görsel">Araba Kapak Fotoğrafı Seçiniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="görsel">
+                            </div>
+                            <div class="form-group">
+                                <label for="görsel2">Araba Resim Seçiniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl2" id="görsel2">
+                            </div>
+                            <div class="form-group">
+                                <label for="görsel3">Araba Resim Seçiniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl3" id="görsel3">
+                            </div>
+                            <div class="form-group">
+                                <label for="görsel4">Araba Resim Seçiniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl4" id="görsel4">
+                            </div>
+                            <br />
+                            <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                            <br />
+                            <div class="form-group">
+                                <label for="açıklama">Araba Açıklamasını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Description" id="açıklama">
+                            </div>
+
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Araba Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

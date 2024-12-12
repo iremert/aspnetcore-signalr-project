@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lenovo\\Desktop\\BitenlerBir kedi varm\u0131\u015F\\SignalRProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{397A6037-346F-4AF8-8A7D-AD567D3B04A6}|SignalRWebUI\\SignalRWebUI.csproj|c:\\users\\lenovo\\desktop\\bitenlerbir kedi varm\u0131\u015F\\signalrproject\\signalrwebui\\areas\\admin\\views\\statistic\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{397A6037-346F-4AF8-8A7D-AD567D3B04A6}|SignalRWebUI\\SignalRWebUI.csproj|solutionrelative:signalrwebui\\areas\\admin\\views\\statistic\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4E7404F-C816-4A68-A2AC-DFDBA3FBC461}|SignalRApi\\SignalRApi.csproj|c:\\users\\lenovo\\desktop\\bitenlerbir kedi varm\u0131\u015F\\signalrproject\\signalrapi\\hubs\\signalrhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4E7404F-C816-4A68-A2AC-DFDBA3FBC461}|SignalRApi\\SignalRApi.csproj|solutionrelative:signalrapi\\hubs\\signalrhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 316,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SignalRHub.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\BitenlerBir kedi varm\u0131\u015F\\SignalRProject\\SignalRApi\\Hubs\\SignalRHub.cs",
+              "RelativeDocumentMoniker": "SignalRApi\\Hubs\\SignalRHub.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\BitenlerBir kedi varm\u0131\u015F\\SignalRProject\\SignalRApi\\Hubs\\SignalRHub.cs",
+              "RelativeToolTip": "SignalRApi\\Hubs\\SignalRHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T18:26:04.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\BitenlerBir kedi varm\u0131\u015F\\SignalRProject\\SignalRWebUI\\Areas\\Admin\\Views\\Statistic\\Index.cshtml",
+              "RelativeDocumentMoniker": "SignalRWebUI\\Areas\\Admin\\Views\\Statistic\\Index.cshtml",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\BitenlerBir kedi varm\u0131\u015F\\SignalRProject\\SignalRWebUI\\Areas\\Admin\\Views\\Statistic\\Index.cshtml",
+              "RelativeToolTip": "SignalRWebUI\\Areas\\Admin\\Views\\Statistic\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-05T18:21:03.786Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

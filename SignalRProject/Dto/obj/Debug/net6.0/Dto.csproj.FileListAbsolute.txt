@@ -1,0 +1,22 @@
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\bin\Debug\net6.0\Dto.deps.json
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\bin\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\bin\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.AssemblyInfoInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.AssemblyInfo.cs
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\refint\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\Dto\obj\Debug\net6.0\ref\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\bin\Debug\net6.0\Dto.deps.json
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\bin\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\bin\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.AssemblyInfoInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.AssemblyInfo.cs
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\refint\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\Dto\obj\Debug\net6.0\ref\Dto.dll

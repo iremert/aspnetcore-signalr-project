@@ -1,0 +1,49 @@
+﻿@model List<ResultAboutDto>
+
+@{
+    ViewData["Title"] = "AboutUs";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+@await Component.InvokeAsync("_UserLayoutHomeTop")
+<br />
+<br />
+@foreach (var item in Model)
+{
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
+                    <img src="@item.ImageUrl" alt="Image" style="height:800px; width:600px;" class="img-fluid">
+                </div>
+                <div class="col-lg-6 mr-auto">
+                    <h2>@item.Title</h2>
+                    <p>@item.Description1</p>
+                    <p>
+                       @item.Description2
+                    </p>
+                    <p>@item.Description3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="@item.ImageUrl2" alt="Image" style="height:800px;width:600px; class="img-fluid">
+                </div>
+                <div class="col-lg-6 ml-auto">
+                    <h2>@item.Title2</h2>
+                    <p>@item.Description_1</p>
+                    <p>
+                        @item.Description_2
+                    </p>
+                    <p>@item.Description3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,52 @@
+﻿@model CreateNotificationDto
+@{
+    ViewData["Title"] = "CreateNotification";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bildirim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Bildirim Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Icon">İkon Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Icon" id="Icon">
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <label for="Description">İkon Rengi Seçiniz</label>
+                                <select asp-for="Type" class="form-control">
+                                    <option value="notif-icon notif-primary">
+                                        Mavi
+                                    </option>
+                                    <option value="notif-icon notif-success">
+                                        Yeşil
+                                    </option>
+                                    <option value="notif-icon notif-danger">
+                                        Kırmızı
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Açıklama Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Description" id="Description">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Bildirim Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

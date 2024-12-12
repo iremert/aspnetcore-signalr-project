@@ -1,0 +1,70 @@
+﻿@model CreateAboutDto
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Hakkımızda İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Hakkımızda Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Title">Üst Başlık Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title" id="Title">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="ImageUrl">Üst Resim Giriniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="ImageUrl">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description1">Üst Açıklama 1 Giriniz</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Description1" id="Description1"> </textarea>        
+                            </div>
+                            <div class="form-group">
+                                <label for="Description2">Üst Açıklama 2 Giriniz</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Description2" id="Description2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description3">Üst Açıklama 3 Giriniz</label>
+                                <textarea rows="5"  type="text" class="form-control" asp-for="Description3" id="Description3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Title2">Alt Başlık Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title2" id="Title2">
+                            </div>
+                            <div class="form-group">
+                                <label for="ImageUrl2">Alt Resim Giriniz</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl2" id="ImageUrl2">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description_1">Alt Açıklama 1 Giriniz</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Description_1" id="Description_1"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description_2">Alt Açıklama 2 Giriniz</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Description_2" id="Description_2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description_3">Alt Açıklama 3 Giriniz</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Description_3" id="Description_3"></textarea>
+                            </div>
+                            
+                            
+
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Hakkımızda Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

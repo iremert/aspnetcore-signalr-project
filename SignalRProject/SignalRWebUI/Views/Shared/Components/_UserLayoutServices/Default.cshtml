@@ -1,0 +1,35 @@
+﻿@model List<ResultServiceDto>
+
+	<!--service start -->
+<section id="service" class="service">
+	<div class="container">
+		<div class="section-header">
+			<h2>Servislerimiz</h2>
+		</div><!--/.section-header-->
+		
+		<div class="service-content">
+			
+				<div class="row">
+				@foreach (var item in Model)
+				{
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service-item" style="height:620px;">
+							<div class="single-service-icon">
+								<i class="@item.Icon"></i>
+							</div>
+							<h2><a href="#">@item.Title</h2>
+							<p>
+								@item.Description
+							</p>
+						</div>
+					</div>
+				}
+				</div>
+			
+			
+		</div>
+		
+	</div><!--/.container-->
+
+</section><!--/.service-->
+<!--service end-->

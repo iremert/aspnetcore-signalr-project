@@ -1,0 +1,38 @@
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\Entities.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\Entities.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\SignalRProject\DataAccess\bin\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\Dto.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\Entities.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\Dto.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\bin\Debug\net6.0\Entities.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+C:\Users\lenovo\OneDrive\Masaüstü\bir kedi varmış\SignalRProject\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

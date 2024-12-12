@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+<section id="home" class="welcome-hero">
+    @await Component.InvokeAsync("_UserLayoutHome")
+</section>
+@await Component.InvokeAsync("_UserLayoutServices")
+@await Component.InvokeAsync("_UserLayoutNewestCars")
+@await Component.InvokeAsync("_UserLayoutFeaturedCars")
+@await Component.InvokeAsync("_UserLayoutBrands")
+
+

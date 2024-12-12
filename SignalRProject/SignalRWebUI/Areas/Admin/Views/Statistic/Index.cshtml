@@ -1,0 +1,547 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <script type="text/javascript">
+                                $(document).ready(() => {
+                                    var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7031/SignalRHub").build();
+                                    $("#connstatus").text(connection.state);
+
+                                    connection.start().then(() => {
+                                        $("#connstatus").text(connection.state);
+                                        setInterval(() => {
+                                            connection.invoke("SendBrandCount");
+                                            connection.invoke("SendCarCount");
+                                            connection.invoke("ActivePassiveBrandCount");
+                                            connection.invoke("GetStatistic");
+                                            connection.invoke("GetStatistic2");
+                                            connection.invoke("SendProgress");
+                                            connection.invoke("ProgressBar");
+                                        }, 1000)
+                                    }).catch((err) => { console.log(err) });
+
+                                    connection.on("ReceiveBrandCount", (value) => {
+                                        $("#brandcount").text(value);
+                                    })
+
+                                    connection.on("ReceiveCarCount", (value2) => {
+                                        $("#carcount").text(value2);
+                                    })
+
+                                    connection.on("ReceiveActiveBrandCount", (value2) => {
+                                        $("#activebrandcount").text(value2);
+                                    })
+
+                                    connection.on("ReceivePassiveBrandCount", (value2) => {
+                                        $("#passivebrandcount").text(value2);
+                                    })
+
+
+
+                                    connection.on("ReceiveHyundaiCount", (value2) => {
+                                        $("#hyundaicount").text(value2);
+                                    })
+
+                                    connection.on("ReceiveRenaultCount", (value2) => {
+                                        $("#renaultcount").text(value2);
+                                    })
+
+                                    connection.on("ReceiveCarPriceAvg", (value2) => {
+                                        $("#carpriceavg").text(value2);
+                                    })
+
+                                    connection.on("ReceiveHyundaiPriceAvg", (value2) => {
+                                        $("#hyundaipriceavg").text(value2);
+                                    })
+                                    connection.on("ReceiveMaxCarPrice", (value2) => {
+                                        $("#maxcarprice").text(value2);
+                                    })
+
+                                    connection.on("ReceiveMinCarPrice", (value2) => {
+                                        $("#mincarprice").text(value2);
+                                    })
+
+
+                                    connection.on("TotalOrderCount", (value2) => {
+                                        $("#totalorder").text(value2);
+                                    })
+                                    connection.on("LastOrderPrice", (value2) => {
+                                        $("#lastorderprice").text(value2);
+                                    })
+
+
+
+                                    connection.on("ActiveTableNumber", (value5) => {
+                                        $("#activetablenumber").text(value5);
+                                    })
+
+                                    connection.on("TodayTotalPrice", (value8) => {
+                                        $("#todaytotalprice").text(value8);
+                                    })
+                                    connection.on("ActiveOrderCount", (value7) => {
+                                        $("#activeordercount").text(value7);
+                                    })
+                                    connection.on("TotalMoneyCaseAmount", (value6) => {
+                                        $("#moneycaseamount").text(value6);
+                                    })
+
+
+
+
+                                    connection.on("TotalMoneyCaseAmount2", (value6) => {
+                                        $("#moneycaseamount2").text(value6);
+                                    })
+                                    connection.on("ActiveTableNumber2", (value6) => {
+                                        $("#activetablenumber2").text(value6);
+                                    })
+                                    connection.on("ActiveOrderCount2", (value6) => {
+                                        $("#activeordercount2").text(value6);
+                                    })
+
+
+
+                                    connection.on("GetAllTableNumberCount", (value6) => {
+                                        $("#totalMenuTableCountProgress").empty();
+                                        $("#totalMenuTableCountProgress").append(`<div class="d-flex justify-content-between mb-1">
+                                                                <span class="text-muted">Toplam Masa Sayısı</span>
+                                                                <span class="text-muted fw-bold">${value6}</span>
+                                                            </div>
+                                                            <div class="progress mb-2" style="height: 7px;">
+                                                            <div class="progress-bar bg-success" role="progressbar" style="width: ${value6}%" aria-valuenow="${value6}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="${value6}%"></div>
+                                                            </div>`);
+                                    })
+                                    connection.on("ReceiveBrandCount", (value6) => {
+                                        $("#ReceiveBrandCount").empty();
+                                        $("#ReceiveBrandCount").append(`<div class="d-flex justify-content-between mb-1">
+                                                                                                <span class="text-muted">Toplam Marka Sayısı</span>
+                                                                                                <span class="text-muted fw-bold">${value6}</span>
+                                                                                            </div>
+                                                                                            <div class="progress mb-2" style="height: 7px;">
+                                                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: ${value6}%" aria-valuenow="${value6}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="${value6}%"></div>
+                                                                                            </div>`);
+                                    })
+                                    connection.on("ReceiveCarCount", (value6) => {
+                                        $("#ReceiveCarCount").empty();
+                                        $("#ReceiveCarCount").append(`<div class="d-flex justify-content-between mb-1">
+                                                                <span class="text-muted">Toplam Araba Sayısı</span>
+                                                                <span class="text-muted fw-bold">${value6}</span>
+                                                            </div>
+                                                            <div class="progress mb-2" style="height: 7px;">
+                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: ${value6}%" aria-valuenow="${value6}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="${value6}%"></div>
+                                                            </div>`);
+                                    })
+                                    connection.on("ActiveOrderCount", (value6) => {
+                                        $("#ActiveOrderCount").empty();
+                                        $("#ActiveOrderCount").append(`<div class="d-flex justify-content-between mb-1">
+                                                                                                <span class="text-muted">Aktif Sipariş Sayısı</span>
+                                                                                                <span class="text-muted fw-bold">${value6}</span>
+                                                                                            </div>
+                                                                                            <div class="progress mb-2" style="height: 7px;">
+                                                                                            <div class="progress-bar bg-primary" role="progressbar" style="width: ${value6}%" aria-valuenow="${value6}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="${value6}%"></div>
+                                                                                            </div>`);
+                                    })
+
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4 class="page-title">Anlık İstatistik Sayfası</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-car"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Araba Sayısı</p>
+                                    <h4 class="card-title" id="carcount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-certificate"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Marka Sayısı</p>
+                                    <h4 class="card-title" id="brandcount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Aktif Marka Sayısı</p>
+                                    <h4 class="card-title" id="activebrandcount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-remove"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Pasif Marka Sayısı</p>
+                                    <h4 class="card-title" id="passivebrandcount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-car-side"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Hyundai Ürün Sayısı</p>
+                                    <h4 class="card-title" id="hyundaicount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-car-rear"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Renault Ürün Sayısı</p>
+                                    <h4 class="card-title" id="renaultcount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Araba Fiyat Ortalaması</p>
+                                    <h4 class="card-title" id="carpriceavg"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-money"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Hyundai Fiyat Ortalaması</p>
+                                    <h4 class="card-title" id="hyundaipriceavg"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-money-bill-1"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">En Pahalı Araba</p>
+                                    <h4 class="card-title" id="maxcarprice"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-regular fa-money-bill-1"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">En Ucuz Araba</p>
+                                    <h4 class="card-title" id="mincarprice"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-arrow-down-1-9"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Toplam Sipariş Sayısı</p>
+                                    <h4 class="card-title" id="totalorder"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-money-check-dollar"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Son Sipariş Fiyatı</p>
+                                    <h4 class="card-title" id="lastorderprice"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-table-cells"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Aktif Masalar</p>
+                                    <h4 class="card-title" id="activetablenumber"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-piggy-bank"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Günün Toplam Kazancı</p>
+                                    <h4 class="card-title" id="todaytotalprice"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Aktif Sipariş Sayısı</p>
+                                    <h4 class="card-title" id="activeordercount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Kasadaki Tutar</p>
+                                    <h4 class="card-title" id="moneycaseamount"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-card-no-pd">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="fw-bold mt-1">Kasadaki Toplam Tutar</p>
+                        <h4 id="moneycaseamount2"><b></b></h4>
+                        <a href="#" class="btn btn-primary btn-full text-left mt-3 mb-3"><i class="la la-plus"></i> Yeni Sipariş</a>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="nav">
+                            <li class="nav-item"><a class="btn btn-default btn-link" href=""><i class="la la-history"></i> Siparişler</a></li>
+                            <li class="nav-item ml-auto"><a class="btn btn-default btn-link" href="/Admin/Statistic/Index/"><i class="la la-refresh"></i> Sayfayı Yenile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="progress-card" id="totalMenuTableCountProgress"></div>
+                        <div class="progress-card" id="ReceiveBrandCount"></div>
+                        <div class="progress-card" id="ReceiveCarCount"></div>
+                        <div class="progress-card" id="ActiveOrderCount"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <p class="fw-bold mt-1">İstatistik</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center icon-warning">
+                                    <i style="color:saddlebrown;" class="fas fa-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Aktif Siparişler</p>
+                                    <h4 class="card-title" id="activeordercount2"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i style="color:yellowgreen;" class="fas fa-th-large"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Aktif Masa Sayısı</p>
+                                    <h4 class="card-title" id="activetablenumber2"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

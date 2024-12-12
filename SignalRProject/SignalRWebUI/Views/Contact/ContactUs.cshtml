@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+
+<section id="home" class="welcome-hero">
+	<div class="container">
+		<div class="welcome-hero-txt">
+		</div>
+	</div>
+</section>
+
+<section class="w3l-contact" id="contact">
+    <div class="text-center mb-3 pb-3">
+        <br />
+        <br />
+        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">İletişim</h6>
+        <br />
+        <h1>Herhangi Bir Soru İçin İletişime Geçin</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+</section>
+
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+            @await Component.InvokeAsync("_UserLayoutContact2")
+            @await Component.InvokeAsync("_UserLayoutContact")
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div id="map" class="bg-white"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+	
+
+
+

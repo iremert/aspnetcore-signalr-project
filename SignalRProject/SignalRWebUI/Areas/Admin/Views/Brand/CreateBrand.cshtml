@@ -1,0 +1,42 @@
+﻿@model SignalRWebUI.Areas.Admin.Dtos.BrandDtos.CreateBrandDto
+
+
+@{
+    ViewData["Title"] = "CreateBrand";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Marka İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data" >
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Marka Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="marka">Marka Adını Giriniz</label>
+                                <input type="text" class="form-control" asp-for="BrandName" id="marka">
+                            </div>
+                            <div class="form-group">
+                                <label for="resmi">Marka Resmini Giriniz</label>
+                                <input type="text" class="form-control" id="resmi" asp-for="ImageUrl" >
+                            </div>
+                            <div class="form-group">
+                                <label for="url">Site Urlsini Giriniz</label>
+                                <input type="text" class="form-control" id="url" asp-for="Url">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Marka Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

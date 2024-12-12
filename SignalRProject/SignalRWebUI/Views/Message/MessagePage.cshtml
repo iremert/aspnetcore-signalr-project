@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "MessagePage";
+    Layout = "~/Views/Layout/UserLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_UserLayoutHomeTop")
+<div class="container">
+     <div class="container mt-5">
+         <br />
+         <div class="row">
+             <div class="col-12">
+                 <h3 class="text-center mb-4">Anlık Mesajlaşma</h3>
+             </div>
+         </div>
+
+         <div class="row p-1">
+             <div class="col-2">Kullanıcı Adınız:</div>
+             <div class="col-5">
+                 <input type="text" id="userinput" class="form-control"/>
+             </div>
+         </div>
+
+         <div class="row p-1">
+             <div class="col-2">Mesajınız:</div>
+            <div class="col-5">
+                <textarea rows="5" type="text" class="form-control"  id="messageinput"></textarea>
+            </div>
+         </div>
+
+         <br />
+         <div class="row p-1">
+             <div class="col-2"></div>
+             <div class="col-3">
+                 <input type="button" id="sendbutton" value="Mesaj Gönder" class="btn btn-warning"/>
+             </div>
+         </div>
+
+         <br />
+         <div class="row p-1">
+             <div class="col-12">
+                 <hr />
+             </div>
+         </div>
+
+         <div class="row p-1">
+             <div class="col-12">
+                 <ul class="list-group" id="messagelist"></ul>
+             </div>
+         </div>
+     </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.8/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>
+
+             <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>without bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+</head>
+<body>
+    <div id="summernote"></div>
+    <script>
+        $('#messageinput').summernote({
+            placeholder: 'Yazınız...',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿@model ResultCarDto
+@{
+    ViewData["Title"] = "CarDetail";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Araba İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Araba Detay Sayfası</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="marka">Araba Markası</label>
+                            <input type="text" class="form-control" asp-for="BrandName" id="marka" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Araba Modeli</label>
+                            <input type="text" class="form-control" asp-for="Model" id="model" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="model_yılı">Araba Model Yılı</label>
+                            <input type="text" class="form-control" asp-for="ModelDate" id="model_yılı" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="kilometre">Araba Kilometre Durumu</label>
+                            <input type="text" class="form-control" asp-for="MileageStatus" id="kilometre" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="motortipi">Araba Motor Tipi</label>
+                            <input type="text" class="form-control" asp-for="EnginType" id="motortipi" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="motorgücü">Araba Motor Gücü</label>
+                            <input type="text" class="form-control" asp-for="MotorPower" id="motorgücü" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="şanzıman">Araba Şanzıman Türü</label>
+                            <input type="text" class="form-control" asp-for="Gearbox" id="şanzıman" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="renk">Araba Rengi</label>
+                            <input type="text" class="form-control" asp-for="Color" id="renk" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasardurumu">Araba Hasar Durumu</label>
+                            <input type="text" class="form-control" asp-for="DamageStatus" id="hasardurumu" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bakımgeçmişi">Araba Bakım Geçmişi </label>
+                            <input type="text" class="form-control" asp-for="MaintenanceHistory" id="bakımgeçmişi" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastikdurumu">Araba Lastik Durumu</label>
+                            <input type="text" class="form-control" asp-for="TireCondition" id="lastikdurumu" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="donanım">Araba Araç Donanımı</label>
+                            <input type="text" class="form-control" asp-for="VehicleEquipment" id="donanım" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="araçiçidurumu">Araba Araç İçi Durumu </label>
+                            <input type="text" class="form-control" asp-for="InVehicleStatus" id="araçiçidurumu" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="belge">Araba Belgeleri</label>
+                            <input type="text" class="form-control" asp-for="Documents" id="belge" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="sigorta">Araba Sigortası </label>
+                            <input type="text" class="form-control" asp-for="Insurance" id="sigorta" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fiyat">Araba Fiyatı </label>
+                            <input type="text" class="form-control" asp-for="Price" id="fiyat" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="pazarlık">Araba Pazarlık Durumu </label>
+                            <input type="text" class="form-control" asp-for="Bargain" id="pazarlık" readonly>
+                        </div>
+                        <br />
+                        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <br />
+                        <div class="form-group">
+                            <label for="görsel">Araba Kapak Fotoğrafı </label>
+                            <input type="text" class="form-control" asp-for="ImageUrl" id="görsel" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="görsel2">Araba Resim </label>
+                            <input type="text" class="form-control" asp-for="ImageUrl2" id="görsel2" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="görsel3">Araba Resim </label>
+                            <input type="text" class="form-control" asp-for="ImageUrl3" id="görsel3" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="görsel4">Araba Resim </label>
+                            <input type="text" class="form-control" asp-for="ImageUrl4" id="görsel4" readonly>
+                        </div>
+                        <br />
+                        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <br />
+                        <div class="form-group">
+                            <label for="açıklama">Araba Açıklaması</label>
+                            <input type="text" class="form-control" asp-for="Description" id="açıklama" readonly>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

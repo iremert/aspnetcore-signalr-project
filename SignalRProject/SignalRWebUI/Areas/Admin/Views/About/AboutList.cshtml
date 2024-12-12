@@ -1,0 +1,86 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+    int index = 0;
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Marka İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Hakkımızda Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Hakkımızda ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz !
+                            <br />
+                            <br />
+                            <p>*Hakkımızda detay kısmından hakkımızda ile ilgili tüm bilgilere ulaşabilirsiniz !</p>
+                            *Beklentimiz <strong>1 aktif</strong> yer olması yönündedir !
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Üst Başlık</th>
+                                    <th scope="col">Üst Resim</th>
+                                    <th scope="col">Üst Açıklama 1</th>
+                                   @*  <th scope="col">Üst Açıklama 2</th>
+                                    <th scope="col">Üst Açıklama 3</th> *@
+                                    <th scope="col">Alt Başlık</th>
+                                    <th scope="col">Alt Resim</th>
+                                    <th scope="col">Alt Açıklama 1</th>
+                                   @*  <th scope="col">Alt Açıklama 2</th>
+                                    <th scope="col">Alt Açıklama 3</th> *@
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Durum Güncelle</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Detay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    index++;
+                                    <tr>
+                                        <td>@index</td>
+                                        <td>@item.Title</td>
+                                        <td><img href="@item.ImageUrl" /></td>
+                                        <td>@item.Description1</td>
+                                       @*  <td>@item.Description2</td>
+                                        <td>@item.Description3</td> *@
+                                        <td>@item.Title2</td>
+                                        <td><img href="@item.ImageUrl2" /></td>
+                                        <td>@item.Description_1</td>
+                                       @*  <td>@item.Description_2</td>
+                                        <td>@item.Description_3</td> *@
+                                        <td>@item.Status</td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td><a href="/Admin/About/ChangeStatusToFalse/@item.AboutID" class="btn btn-danger">Pasif Yap</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/Admin/About/ChangeStatusToTrue/@item.AboutID" class="btn btn-success">Aktif Yap</a></td>
+                                        }
+                                        <td><a href="/Admin/About/DeleteAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Admin/About/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td><a href="/Admin/About/AboutDetail/@item.AboutID" class="btn btn-outline-primary">Detay</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                        <a href="/Admin/About/CreateAbout/" class="btn btn-outline-primary">Yeni Hakkımızda Girişi</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

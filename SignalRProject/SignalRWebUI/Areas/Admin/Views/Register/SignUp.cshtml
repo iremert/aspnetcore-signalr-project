@@ -1,0 +1,49 @@
+﻿@model SignalRWebUI.Areas.Admin.Dtos.RegisterDtos.RegisterDto
+@{
+    Layout = null;
+}
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Glassmorphism Login</title>
+    <link rel="stylesheet" href="~/login/dist/style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+        <section class="container">
+            <div class="login-container">
+                <div class="circle circle-one"></div>
+                <div class="form-container">
+                    <h1 class="opacity">Admin Kayıt</h1>
+                    <form method="post">
+                        <input type="text" placeholder="Admin Adınız" asp-for="Name"/>
+                        <input type="text" placeholder="Admin Soyadınız" asp-for="Surname"/>
+                        <input type="text" placeholder="Admin Kullanıcı Adınız" asp-for="Username"/>
+                        <input type="text" placeholder="Admin Emailiniz" asp-for="Mail"/>
+                        <input type="password" placeholder="Admin Şifreniz" asp-for="Password"/>
+                        <button class="opacity">Kayıt Ol</button>
+                    </form>
+                    <div class="register-forget opacity">
+                        <a href="/Admin/Register/SignIn/">Zaten Kayıtlıyım</a>
+                    </div>
+                </div>
+                <div class="circle circle-two"></div>
+            </div>
+            <div class="theme-btn-container"></div>
+        </section>
+    </body>
+    <!-- partial -->
+    <script src="~/login/dist/script.js"></script>
+
+</body>
+</html>
+
+

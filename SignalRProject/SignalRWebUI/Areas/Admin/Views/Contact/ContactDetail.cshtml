@@ -1,0 +1,43 @@
+﻿@model ResultContactDto
+@{
+    ViewData["Title"] = "ContactDetail";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">İletişim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">İletişim Detay Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="NameSurname">Ad Soyad</label>
+                                <input type="text" class="form-control" asp-for="NameSurname" id="NameSurname" readonly>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Mail</label>
+                                <input type="text" class="form-control" asp-for="Email" id="Email" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="Subject">Konu</label>
+                                <input type="text" class="form-control" asp-for="Subject" id="Subject" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="Message">Mesaj</label>
+                                <textarea rows="5" type="text" class="form-control" asp-for="Message" id="Message" readonly></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

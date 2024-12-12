@@ -1,0 +1,30 @@
+﻿@model List<ResultBrandDto>
+
+<!--brand strat -->
+<section id="brand" class="brand">
+    <div class="container">
+        <div class="section-header">
+            <p>Markalarımızı İnceleyin</p>
+            <h2>Markalar</h2>
+        </div><!--/.section-header-->
+        <div class="brand-area">
+            <div class="owl-carousel owl-theme brand-item">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+
+                        <a href="@item.Url">
+                            <img src="@item.ImageUrl" alt="brand-image" />
+                        </a>
+
+                    </div>
+
+                    <!--/.item-->
+                }
+            </div><!--/.owl-carousel-->
+        </div><!--/.clients-area-->
+
+    </div><!--/.container-->
+
+</section><!--/brand-->
+<!--brand end -->

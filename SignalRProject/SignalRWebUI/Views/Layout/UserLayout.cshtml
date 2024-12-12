@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    @await Component.InvokeAsync("_UserLayoutHeader")
+</head>
+<body>
+    @await Component.InvokeAsync("_UserLayoutNavbar")
+    @RenderBody();
+    @await Component.InvokeAsync("_UserLayoutScript")
+    @await Component.InvokeAsync("_UserLayoutFooter")
+</body>
+</html>
